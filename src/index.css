@@ -51,11 +51,17 @@ body {
 .cartSection{
   max-width: 760px;
   width:90%;
+
+  margin: 0 auto;
+  margin-top: 70px;
+
+}
+.cartFirst{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  margin-top: 70px;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
 
 }
 
@@ -63,6 +69,7 @@ body {
   width: 20px;
   color: grey;
   cursor: pointer;
+  
 
 }
 .firstSVG{
@@ -87,11 +94,13 @@ body {
 }
 
 .imgSection{
-  width: 80px
+  width: 80px;
+  border-radius: 6px;
 }
 .imgSection img{
   width: 100%;
 /* height: auto; */
+border-radius: 6px;
 object-fit: cover;
 }
 .detailsContainer {
@@ -109,7 +118,23 @@ object-fit: cover;
 
 /* cart section ends */
 
-
+.btn-remove{
+  margin-top: .2rem;
+  border: 1px solid red;
+  border-radius: 3px;
+  color: red;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 2px 0;
+  
+}
+.btn-remove:hover{
+  border: 1px solid red;
+  border-radius: 3px;
+  color: #fff;
+  background-color: red;
+  
+}
 
 
 
