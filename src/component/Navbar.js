@@ -6,7 +6,7 @@ export default function Navbar() {
     <div className='headerSection'>
         <div className='mainSection'>
         <div>
-        <p>UseReducer</p>
+        <p>ArnoldOnline</p>
         </div>
         <div className='iconRight'>
        
