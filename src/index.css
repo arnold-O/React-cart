@@ -1,14 +1,21 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+
+}
+*{
+  margin: 0;
+  padding: 0;
 
 }
 
 
 .headerSection{
   background-color: blue;
+  padding:0.875rem;
 
 }
 
@@ -32,9 +39,81 @@ body {
   left: 85%;
 }
 
+
+/* cart section */
+
 .cart-title{
   text-align: center;
+  margin-top: 80px;
 }
+
+
+.cartSection{
+  max-width: 760px;
+  width:90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 70px;
+
+}
+
+.svg-first{
+  width: 20px;
+  color: grey;
+  cursor: pointer;
+
+}
+.firstSVG{
+  padding-bottom: .5rem;
+}
+.secondSVG{
+  padding-top: .5rem;
+}
+
+.counter-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.sectionLeft{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .875rem
+}
+
+.imgSection{
+  width: 80px
+}
+.imgSection img{
+  width: 100%;
+/* height: auto; */
+object-fit: cover;
+}
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  
+}
+.itemName{
+  margin-bottom:6px
+}
+.price{
+  margin-bottom:6px
+}
+
+
+/* cart section ends */
+
+
+
+
+
+
 
 /* media quearies */
 
