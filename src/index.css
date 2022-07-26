@@ -53,7 +53,7 @@ body {
   width:90%;
 
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 40px;
 
 }
 .cartFirst{
@@ -75,8 +75,22 @@ body {
 .firstSVG{
   padding-bottom: .5rem;
 }
+.firstSVG:hover{
+  fill: green;
+}
 .secondSVG{
   padding-top: .5rem;
+
+ 
+ 
+  
+}
+.secondSVG:hover{
+ fill: red;
+
+ 
+ 
+  
 }
 
 .counter-section{
