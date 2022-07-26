@@ -1,20 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './component/Navbar';
-import CartItem from './component/CartItem';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./component/Navbar";
+import CartItem from "./component/CartItem";
 
 function App() {
   return (
-   <>
-   <Navbar/>
+    <>
+      <Navbar />
 
-   <CartItem/>
-    
-
-
-   </>
-
-   
+      <CartItem />
+    </>
   );
 }
 
