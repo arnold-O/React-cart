@@ -6,7 +6,8 @@ import  { useGlobalContext } from "./Context";
 export default function CartItem() {
   
 
-  const {cart , clearCart, removeOne, increasItem, decreaseItem} = useGlobalContext()
+  const {cart , clearCart, removeOne, increasItem, decreaseItem , total} = useGlobalContext()
+  console.log(total)
 
   return (
     <div className="cartSection">
