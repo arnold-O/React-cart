@@ -24,7 +24,6 @@ const reducer = (state, action)=> {
 
     }
 
-
     if(action.type === "DECREASE"){
         const newValue = state.cart.map((item)=>{
             if(item.id === action.payload){
@@ -32,12 +31,9 @@ const reducer = (state, action)=> {
 
             }
             return item
-        })
+        }).filter((item)=>item.amount !== 0)
         return {...state, cart:newValue}    
     }
-
-    
-
 
 
     return state
