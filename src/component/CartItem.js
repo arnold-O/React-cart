@@ -65,7 +65,7 @@ export default function CartItem() {
 
       <div className="total-section">
         <p>Total</p>
-        <p>$0.00</p>
+        <p>${total}</p>
       </div>
 
       <div class="clear-cart-btn">

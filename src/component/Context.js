@@ -37,10 +37,10 @@ const AppProvider = ({children})=>{
     // get total
 
 
-    useEffect(()=>{
-      dispatch({type:"TOTAL"})
+    // useEffect(()=>{
+    //   dispatch({type:"TOTAL"})
 
-    },[state.cart])
+    // },[state.cart])
 
    return <AppContext.Provider
     value={{

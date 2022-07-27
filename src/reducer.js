@@ -1,65 +1,58 @@
+const reducer = (state, action) => {
+  if (action.type === "CLEAR_CART") {
+    return { ...state, cart: [] };
+  }
 
+  if (action.type === "REMOVE_ONE") {
+    return {
+      ...state,
+      cart: state.cart.filter((item) => item.id !== action.payload),
+    };
+  }
 
-const reducer = (state, action)=> {
+  if (action.type === "INCREASE") {
+    const newValue = state.cart.map((item) => {
+      if (item.id === action.payload) {
+        return { ...item, amount: item.amount + 1 };
+      }
+      return item;
+    });
 
-    if(action.type === "CLEAR_CART"){
-        return {...state, cart:[]}
-    }
+    return { ...state, cart: newValue };
+  }
 
-    if(action.type === "REMOVE_ONE"){
-        return {...state,  cart:state.cart.filter((item)=> item.id !== action.payload) }
-    }
+  if (action.type === "DECREASE") {
+    const newValue = state.cart
+      .map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, amount: item.amount - 1 };
+        }
+        return item;
+      })
+      .filter((item) => item.amount !== 0);
+    return { ...state, cart: newValue };
+  }
 
-    if(action.type === "INCREASE"){
+  if (action.type === "TOTAL") {
+    let { total, amount } = state.cart.reduce((cartTotal, item) => {
+      const { price, amount } = item;
 
-        const newValue = state.cart.map((item)=>{
-            if(item.id === action.payload){
-                return {...item, amount:item.amount+1}
-              
-            }
-            return item
-        })
+      cartTotal.amount += amount;
+      cartTotal.total += price * amount;
 
-        return {...state, cart:newValue}
+      return cartTotal;
+    },{ total:0,
+        amount:0
 
-    }
+    })
 
-    if(action.type === "DECREASE"){
-        const newValue = state.cart.map((item)=>{
-            if(item.id === action.payload){
-                return {...item, amount:item.amount - 1}
+    total = parseFloat(total.toFixed(2));
 
-            }
-            return item
-        }).filter((item)=>item.amount !== 0)
-        return {...state, cart:newValue}    
-    }
+    return { ...state, total, amount};
+  }
+  
 
-    if(action.type === "TOTAL"){
+  return state;
+};
 
-        let {total, amount} = state.cart.reduce((cartTotal, item)=>{
-
-            const {price, amount} = item
-         
-
-            cartTotal.amount += amount;
-            cartTotal.total += price * amount
-
-            return cartTotal
-        })
-
-
-                total = parseFloat(total.toFixed(2))
-
-
-
-        return {...state, total:total, amount:amount}
-    }
-
-
-    return state
-}
-
-
-
-export default reducer
+export default reducer;

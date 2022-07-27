@@ -1,6 +1,15 @@
 import React from 'react'
 
-export default function Navbar() {
+import  { useGlobalContext } from "./Context";
+
+
+
+
+  
+
+  
+  export default function Navbar() {
+  const {amount} = useGlobalContext()
   return (
     <>
     <div className='headerSection'>
@@ -11,7 +20,7 @@ export default function Navbar() {
         <div className='iconRight'>
        
             <p>cart</p>
-            <p className='position-abs'>3</p>
+            <p className='position-abs'>{amount}</p>
          
         </div>
 
