@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { data } from "./data";
+import  { useGlobalContext } from "./Context";
+
+
 
 export default function CartItem() {
-  const [file, setFile] = useState(data);
-  console.log(data);
+  
+
+  const {cart} = useGlobalContext()
+
   return (
     <div className="cartSection">
-      {file.map((item) => {
+      {cart.map((item) => {
         const { price, name, id, img } = item;
 
         return (
@@ -56,6 +60,10 @@ export default function CartItem() {
           </div>
         );
       })}
+
+      <div>
+        <button >CLEAR CART</button>
+      </div>
     </div>
   );
 }

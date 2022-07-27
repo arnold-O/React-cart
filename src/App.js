@@ -1,9 +1,10 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
+
 import Navbar from "./component/Navbar";
 import CartItem from "./component/CartItem";
 
-function App() {
+export default function App() {
   return (
     <>
       <Navbar />
@@ -12,5 +13,3 @@ function App() {
     </>
   );
 }
-
-export default App;

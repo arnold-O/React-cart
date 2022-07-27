@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className='iconRight'>
        
             <p>cart</p>
-            <p className='position-abs'>0</p>
+            <p className='position-abs'>3</p>
          
         </div>
 
