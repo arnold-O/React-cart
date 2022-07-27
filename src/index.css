@@ -126,6 +126,24 @@ body {
   color: #fff;
   background-color: red;
 }
+.clear-cart-btn {
+  text-align: center;
+}
+.clear-cart-btn button {
+  background-color: #fff;
+  color: red;
+  border: 1px solid red;
+  padding: 0.2rem 0.875rem;
+  border-radius: 4px;
+  margin-bottom: 3rem;
+}
+.total-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
 
 /* media quearies */
 

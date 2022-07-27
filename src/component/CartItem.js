@@ -6,7 +6,7 @@ import  { useGlobalContext } from "./Context";
 export default function CartItem() {
   
 
-  const {cart} = useGlobalContext()
+  const {cart , clearCart, removeOne} = useGlobalContext()
 
   return (
     <div className="cartSection">
@@ -23,7 +23,7 @@ export default function CartItem() {
                 <p className="itemName">{name}</p>
                 <p className="price">${price}</p>
 
-                <button className="btn-remove">Remove</button>
+                <button className="btn-remove" onClick={()=>removeOne(id)}>Remove</button>
               </div>
             </div>
             <div className="counter-section">
@@ -60,9 +60,15 @@ export default function CartItem() {
           </div>
         );
       })}
+      <hr />
 
-      <div>
-        <button >CLEAR CART</button>
+      <div className="total-section">
+        <p>Total</p>
+        <p>$0.00</p>
+      </div>
+
+      <div class="clear-cart-btn">
+        <button onClick={clearCart} >CLEAR CART</button>
       </div>
     </div>
   );
