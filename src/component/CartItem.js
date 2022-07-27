@@ -6,12 +6,12 @@ import  { useGlobalContext } from "./Context";
 export default function CartItem() {
   
 
-  const {cart , clearCart, removeOne} = useGlobalContext()
+  const {cart , clearCart, removeOne, increasItem, decreaseItem} = useGlobalContext()
 
   return (
     <div className="cartSection">
       {cart.map((item) => {
-        const { price, name, id, img } = item;
+        const { price, name, id, img , amount} = item;
 
         return (
           <div key={id} className="cartFirst">
@@ -27,7 +27,7 @@ export default function CartItem() {
               </div>
             </div>
             <div className="counter-section">
-              <svg
+              <svg onClick={()=>increasItem(id)}
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 svg-first firstSVG"
                 fill="none"
@@ -41,8 +41,8 @@ export default function CartItem() {
                   d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a9 9 0 110 18 9 9 0 010-18z"
                 />
               </svg>
-              <p>0</p>
-              <svg
+              <p>{amount}</p>
+              <svg onClick={()=>decreaseItem(id)}
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 svg-first secondSVG"
                 fill="none"

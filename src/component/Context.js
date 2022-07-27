@@ -15,20 +15,29 @@ const initialState = {
 const AppProvider = ({children})=>{
     const [state, dispatch] = useReducer(reducer, initialState)
 
-
+// clear entire cart
     const clearCart = ()=>{
         dispatch({type:"CLEAR_CART"})
     }
 
+    // remove each product
     const removeOne = (id)=>{
 
       dispatch({type:"REMOVE_ONE", payload:id})
 
     }
+// increase item in Cart
+    const increasItem = (id)=>{
+      dispatch({type:"INCREASE", payload:id})
+    }
+    // decrease item in Cart
+    const decreaseItem = (id)=>{
+      dispatch({type:"DECREASE", payload:id})
+    }
 
    return <AppContext.Provider
     value={{
-      ...state, clearCart, removeOne
+      ...state, clearCart, removeOne, increasItem, decreaseItem
     }}
   >
     {children}

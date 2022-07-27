@@ -136,6 +136,7 @@ body {
   padding: 0.2rem 0.875rem;
   border-radius: 4px;
   margin-bottom: 3rem;
+  cursor: pointer;
 }
 .total-section {
   display: flex;
